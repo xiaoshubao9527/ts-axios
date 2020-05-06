@@ -14,7 +14,7 @@ axios({
   method: 'post',
   url: '/base/post',
   data: {
-    c: 3,
-    d: 4
+    a: [1, 2],
+    b: { name: 'base' }
   }
 })
