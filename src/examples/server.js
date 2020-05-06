@@ -27,9 +27,23 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 
 app.use(router) //调用路由
+// 第一个初始化的基本请求
 router.get('/simple/get', function(req, res) {//当请求到 "/simple/get" 时 返回一个json数据
   res.json({
     msg: `hello world`
+  })
+})
+// 第二个url的请求
+router.get('/base/get', function(req, res) {
+  res.json({
+    msg: 'base/get',
+    requestMSG: req.query
+  })
+})
+router.post('/base/get', function(req, res) {
+  res.send({
+    msg: 'base/post',
+    requestMSG: req.body
   })
 })
 const port = process.env.PORT || 7080
