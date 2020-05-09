@@ -1,4 +1,4 @@
-import { isDate, isObject } from './util'
+import { isDate, isPlainObject } from './util'
 
 function encode(val: string): string {
   return encodeURIComponent(val) // 加密函数, 然后保留加密后数据中的一些基本特殊字符
@@ -41,7 +41,7 @@ export function bulidURL(url: string, params?: any) {
       if (isDate(val)) {
         //如果是日期就转化是字符串
         val = val.toISOString()
-      } else if (isObject(val)) {
+      } else if (isPlainObject(val)) {
         //如果是对象就使用json的解析方式解析为字符串
         val = JSON.stringify(val)
       }

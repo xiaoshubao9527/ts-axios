@@ -40,10 +40,12 @@ router.get('/base/get', function(req, res) {
     requestMSG: req.query
   })
 })
-router.post('/base/get', function(req, res) {
+router.post('/base/post', function(req, res) {
+  console.log(req.body)
   res.send({
     msg: 'base/post',
-    requestMSG: req.body
+    requestBodyMsg: req.body,
+    requestQueryMsg: req.query
   })
 })
 const port = process.env.PORT || 7080

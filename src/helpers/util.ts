@@ -6,11 +6,11 @@ export function isDate(val: any): val is Date {
   return toString.call(val) === '[object Date]'
 }
 export function isPlainObject(val: any): val is Object {
-  //判断传入的数据是否为标准对象格式
+  //判断传入的数据是否为标准对象格式 => {}
   return toString.call(val) === '[object Object]'
 }
 
 export function isObject(val: any): val is Object {
-  //验证是否是普通对象
+  //验证是否是普通对象 => {} [] date...
   return val !== null && typeof val === 'object'
 }
